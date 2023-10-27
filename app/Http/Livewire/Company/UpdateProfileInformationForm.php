@@ -57,9 +57,9 @@ class UpdateProfileInformationForm extends Component
             return redirect()->route('profile.show');
         }
 
-        $this->emit('saved');
+        $this->dispatch('saved');
 
-        $this->emit('refresh-navigation-menu');
+        $this->dispatch('refresh-navigation-menu');
     }
 
     /**
@@ -71,7 +71,7 @@ class UpdateProfileInformationForm extends Component
     {
         Auth::user()->company->deleteProfilePhoto();
 
-        $this->emit('refresh-navigation-menu');
+        $this->dispatch('refresh-navigation-menu');
     }
 
     /**
